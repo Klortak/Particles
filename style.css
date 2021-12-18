@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    user-select: none;
+    color: var(--txt);
+    background-color: var(--bkg);
+    transition: 1s filter linear, 1s -webkit-filter linear;
+    transition: all .25s;
+}
+
+body.dark {
+    color: var(--txt-dark);
+    background-color: var(--bkg-dark);
+}
+
+#fps {
+    position: absolute;
+}
+
+#canvas1 {
+    background: #1a1a1a;
+}
+
+:root {
+    --txt: #000000;
+    --bkg: #FFFFFF;
+
+    --txt-dark: #FFFFFF;
+    --bkg-dark: #000000;
+}
+
+.flex .section {
+    display: flex;
+    width: 100%;
+    height: 50vh;
+    overflow: hidden; 
+}
+
+.image {
+    object-fit: cover;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: fixed; 
+    bottom: 1%; 
+    right: .75%; 
+    width: 40%; 
+    height: 40%;
+    user-select: none;
+}
+
+.dark .mask { 
+    transition: .25s;
+    filter: invert(1); 
+    mix-blend-mode: multiply;
+}
+
+.dark .image { 
+    filter: invert(1); 
+}
+
+.mask { mix-blend-mode: screen; }
+
+.flex .content { position: relative; }
+
+.center { justify-content: center; }
+
+.left { justify-content: left; }
+
+.right { justify-content: right;}
+
+.center-vertical { align-items: center; }
+
+/* Big Screen */
+@media screen and (min-width: 800px) {
+
+    /* https://ishadeed.com/article/grid-layout-flexbox-components */
+
+    .flex {
+        display: flex;
+    }
+
+    .flex .section.big {
+        width: 75%;
+    }
+
+    .flex .section.small {
+        width: 25%;
+    }
+
+    .flex .section {
+        width: 100%;
+        height: 100vh;
+    }
+}
+
